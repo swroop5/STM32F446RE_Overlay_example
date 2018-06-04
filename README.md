@@ -3,6 +3,17 @@ This is a simple example of an Overlay Implementation for the Microcontroller ST
 
 This is an Eclipse C Project. The recommended Eclipse version is Neon for C/C++ Developers.
 
+## Short Description
+The STM32F446 nucleo board comes with a 512 Kb Flash and a 128 Kb RAM.
+Since all of the code that gets executed on the Processor needs to be on the RAM, the entire Flash 
+Memory of 512 Kb cannot be utilized. In other words, only 128 Kb can be used in order to
+run the code, limited by the RAM size. In order to overcome this problem, the concept of Overlays
+is introduced. Overlays make it possible to dynamically load object (*.o) files from the Flash
+Memory onto the RAM memory(reserved area), so that more code can sit on Flash and can be copied
+to the RAM during execution. Hence, this project is a simple example of the Overlay
+mechanism that needs to be implemented in order to achieve this goal.
+A good article on Overlay mechanism is https://sourceware.org/binutils/docs/ld/Overlay-Description.html
+
 ## Pre-requisites
 Download and install the following toolchains/plugins:
 1. Cross-Toolchain for ARM Cortex M Processor
